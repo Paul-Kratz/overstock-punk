@@ -25,6 +25,7 @@ function App() {
   }
   useEffect(() => {
     getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <InfiniteScroll
@@ -42,7 +43,7 @@ function App() {
 
       {items.map((i, index) => (
         <div style={style} key={index}>
-          <img src={i.image_url} alt={`Image of ${i.name}`} height={50} />
+          <img src={i.image_url} alt={i.name} height={50} />
           {i.name}
         </div>
       ))}
