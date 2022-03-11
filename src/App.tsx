@@ -1,11 +1,10 @@
+import 'bootstrap/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { getAllBeers } from './api';
-import './App.css';
 import { IBeer } from './models/IBeer';
 const style = {
   height: 30,
-  border: "1px solid green",
   margin: 6,
   padding: 8
 };
@@ -42,7 +41,7 @@ function App() {
     >
 
       {items.map((i, index) => (
-        <div style={style} key={index}>
+        <div className="card card-body" style={style} key={index}>
           <img src={i.image_url} alt={i.name} height={50} />
           {i.name}
         </div>
