@@ -5,7 +5,7 @@ export const ROOT = "https://api.punkapi.com/v2/";
 
 const axiosInstance = axios.create({
     baseURL: ROOT,
-    timeout: 1000,
+    timeout: 2000,
     headers: { 'Accept': 'application/json' }
 })
 export const getAllBeers = async (params?: IPageParams): Promise<Array<IBeer>> => {
