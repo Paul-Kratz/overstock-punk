@@ -11,7 +11,7 @@ const Layout = ({ children }: LayoutProps) => {
         <div>
             <div className="d-flex justify-content-between align-items-center w-100 p-3 ps-5" style={{ height: 75, backgroundColor: '#EC5766' }}>
                 <Link to="/" className='text-decoration-none'> <h1 className="text-white m-0 p-0">PUNK IPA</h1></Link>
-                <a href="https://github.com/Paul-Kratz/overstock-punk" target="_blank">
+                <a href="https://github.com/Paul-Kratz/overstock-punk" target="_blank" rel="noreferrer">
                     <GithubIcon />
                 </a>
             </div>
