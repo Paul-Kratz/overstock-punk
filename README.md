@@ -1,5 +1,4 @@
-[![Build and Deploy](https://github.com/Paul-Kratz/overstock-punk/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Paul-Kratz/overstock-punk/actions/workflows/main.yml)
-[![pages-build-deployment](https://github.com/Paul-Kratz/overstock-punk/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/Paul-Kratz/overstock-punk/actions/workflows/pages/pages-build-deployment)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e0f303d9-6544-4816-a06d-f9dd814f4eed/deploy-status)](https://app.netlify.com/sites/affectionate-pike-516583/deploys)
 ## Project using Punk API to display beers
 
-View deployed site [here](https://paul-kratz.github.io/overstock-punk/)
+View deployed site [here](https://overstock-punk.netlify.app)

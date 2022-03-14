@@ -1,6 +1,6 @@
 {
   "name": "overstock-punk",
-  "homepage": "http://paul-kratz.github.io/overstock-punk",
+  "homepage": "./",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
