@@ -8,9 +8,12 @@ export interface IBeer {
     abv: number,
     ebc: number,
     ibu: number,
+    ph: number,
+    srm: number,
     volume: {
         value: number,
         unit: string
     },
+    brewers_tips: string,
     food_pairing: string[]
 }
