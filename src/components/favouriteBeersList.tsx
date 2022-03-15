@@ -12,7 +12,7 @@ export const FavouriteBeersList = () => {
             <div className="card-body d-flex justify-content-between align-items-center">
                 <Link to={`beers/${beer.id}`} className="text-decoration-none text-black me-1 d-flex align-items-center">
 
-                    <img src={beer.image_url} height={40} className="me-3" />
+                    <img src={beer.image_url} alt={`${beer.name} bottle`} height={40} className="me-3" />
                     <div>
                         {beer.name}
                         <br />
