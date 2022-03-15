@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import FavouritesProvider from './components/FavouritesProvider';
 import Layout from './components/Layout';
-const BeerList = React.lazy(() => import('./components/beerList/beerList'));
+const BeerList = React.lazy(() => import('./views/BeerList'));
 const BeerDetails = React.lazy(() => import('./views/BeerDetails'));
 function App() {
   return (

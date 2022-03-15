@@ -1,0 +1,57 @@
+.beerCard {
+    width: 300px;
+    height: 300px;
+    border-radius: 0.5em;
+    border: none;
+    margin: 0.5em 0;
+}
+
+.favouriteIcon {
+    font-size: 1.2em;
+    position: absolute;
+    opacity: 0.8;
+    top: 0.75em;
+    right: 0.75em;
+    cursor: pointer;
+}
+
+.favouriteIcon:hover {
+    font-size: 1.3em;
+    opacity: 1;
+    transition: 0.2s ease-in;
+}
+
+.cardBody {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.cardBody img {
+    height: 175px;
+}
+
+
+.cardBody:hover img {
+    height: 190px;
+    transition: 0.5s ease-in-out;
+}
+
+
+.beerName {
+    font-size: 1.1em;
+    font-weight: 500;
+    max-width: 220px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.abv {
+    font-weight: 500;
+    color: black;
+}
+
+

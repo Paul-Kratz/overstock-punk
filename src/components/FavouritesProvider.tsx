@@ -8,7 +8,6 @@ type FavouritesProviderProps = {
 
 const FavouritesProvider = ({ children }: FavouritesProviderProps) => {
     const [favourites, setFavourites] = useState<IBeer[]>([]);
-
     const addFavourite = (beer: IBeer) => {
         const existing = favourites?.findIndex(b => b.id === beer.id);
         if (existing !== -1) {
@@ -17,6 +16,10 @@ const FavouritesProvider = ({ children }: FavouritesProviderProps) => {
         setFavourites([...favourites, beer]);
     }
 
+    const isFavourite = (id: number) => {
+        const existing = favourites?.findIndex(b => b.id === id);
+        return existing === -1 ? false : true;
+    }
     const removeFavourite = (id: number) => {
         const updatedFavourites = [...favourites];
         const indexToDelete = updatedFavourites?.findIndex(b => b.id === id);
@@ -26,7 +29,7 @@ const FavouritesProvider = ({ children }: FavouritesProviderProps) => {
         updatedFavourites.splice(indexToDelete, 1);
         setFavourites(updatedFavourites);
     }
-    return <FavouritesContext.Provider value={{ favourites, addFavourite, removeFavourite }}>{children}</FavouritesContext.Provider>
+    return <FavouritesContext.Provider value={{ favourites, addFavourite, removeFavourite, isFavourite }}>{children}</FavouritesContext.Provider>
 }
 export const useFavourites = () => useContext(FavouritesContext);
 export default FavouritesProvider;

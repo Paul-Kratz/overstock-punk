@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { Link } from 'react-router-dom';
-import { getAllBeers } from '../../api';
-import { IBeer } from '../../models/IBeer';
+import { getAllBeers } from '../api';
+import { BeerCard } from '../components/beerCard';
+import { IBeer } from '../models/IBeer';
 
 export default function BeerList() {
     const [items, setItems] = useState<IBeer[]>([]);
@@ -25,23 +25,27 @@ export default function BeerList() {
             next={getData}
             hasMore={hasMore}
             style={{ overflow: 'none' }}
-            loader={<h4>Brewing another batch...</h4>}
+            loader={
+                (<div className="w-100 text-center mt-3">
+                    <i className="fa fa-spinner fa-spin" style={{
+                        fontSize: '2em', textAlign: 'center'
+                    }} />
+                </div>)}
             endMessage={
-                <p style={{ textAlign: "center" }}>
+                (<p style={{ textAlign: "center" }}>
                     <b>Never drink & drive</b>
-                </p>
+                </p>)
             }
         >
-
-            {items.map((i, index) => (
-                <Link to={`beers/${i.id}`} className="text-decoration-none">
-                    <div className="card card-body" key={index}>
-                        {/* <img src={i.image_url} alt={i.name} height={50} /> */}
-                        {i.name}
-                    </div>
-                </Link>
-
-            ))}
+            <div className="container">
+                <div className="row d-flex align-items-stretch">
+                    {items.map((i) => (
+                        <div key={`beer-${i.id}`} className="col-xs-12 col-sm-6 col-md-6 col-lg-4 mt-2 d-flex align-items-stretch justify-content-center" >
+                            <BeerCard beer={i} />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </InfiniteScroll>
     )
 }

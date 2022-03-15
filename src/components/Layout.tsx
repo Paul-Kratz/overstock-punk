@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FavouriteBeersList } from './favouriteBeersList'
 import GithubIcon from './githubIcon'
 
 type LayoutProps = {
@@ -9,16 +10,18 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
     return (
         <div>
-            <div className="d-flex justify-content-between align-items-center w-100 p-3 ps-5" style={{ height: 75, backgroundColor: '#EC5766' }}>
+            <div className="d-flex justify-content-between align-items-center w-100 p-3 ps-5 sticky-top" style={{ height: 75, backgroundColor: '#EC5766' }}>
                 <Link to="/" className='text-decoration-none'> <h1 className="text-white m-0 p-0">PUNK IPA</h1></Link>
                 <a href="https://github.com/Paul-Kratz/overstock-punk" target="_blank" rel="noreferrer">
                     <GithubIcon />
                 </a>
             </div>
             <div className="row m-0 h-100" style={{ maxWidth: '100vw' }}>
-                <div className="col-md-2 p-0 col-sm-12">
-                    <div className="d-flex flex-column flex-shrink-0 p-3 me-2">
-                        Favourite Beers
+                <div className="col-lg-3 col-md-12 p-0 col-sm-12">
+                    <div className="sticky-top" style={{ top: 75 }}>
+                        <div className="d-flex flex-column flex-shrink-0 p-3 pe-0 me-2">
+                            <FavouriteBeersList />
+                        </div>
                     </div>
                 </div>
                 <div className="col">
