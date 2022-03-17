@@ -1,5 +1,5 @@
 
-describe('beerList view tests', () => {
+describe('Application tests', () => {
     beforeEach(() => {
         cy.intercept({ method: 'GET', url: 'https://api.punkapi.com/v2/beers?page=1' }, { fixture: 'beers.json' })
         cy.intercept({ method: 'GET', url: 'https://api.punkapi.com/v2/beers?page=2' }, [])
@@ -38,7 +38,33 @@ describe('beerList view tests', () => {
 
     it("should show bottom of list message", () => {
         cy.scrollTo(0, 600);
-        cy.contains("Never drink & drive").should("exist");
+        cy.contains("There are no more beers, you drank them all!").should("exist");
     })
 
+
+    it("should show a detail page when an item is clicked on", () => {
+        cy.intercept({ method: 'GET', url: 'https://api.punkapi.com/v2/beers/1' }, { fixture: 'beer.json' })
+
+        cy.contains("A Real Bitter Experience").click({ force: true });
+
+        cy.contains("Go Back").should("exist")
+
+        cy.contains("A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.").should("exist");
+
+        cy.contains("Go Back").click({ force: true });
+    })
+
+    it("should show the correct favourite button for a beer", () => {
+        cy.intercept({ method: 'GET', url: 'https://api.punkapi.com/v2/beers/1' }, { fixture: 'beer.json' })
+        cy.get(".fa-star-o").first().click({ force: true });
+        cy.contains("A Real Bitter Experience").click({ force: true });
+        cy.contains("Remove favourite").should("exist")
+
+
+        cy.get(".fa-trash-o").first().click();
+        cy.contains("Add favourite").should("exist")
+
+
+
+    })
 })
