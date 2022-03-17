@@ -29,7 +29,7 @@ export const FavouriteBeersList = () => {
 
             <hr />
             {favourites.length > 0 ? favourites.map(b => renderFavouriteCard(b)) :
-                <div className="display-5 text-secondary" style={{ fontSize: '1em' }}>You haven't added any favourites yet</div>
+                <div className="display-5" style={{ fontSize: '1em', color: 'black', opacity: 0.8 }}>You haven't added any favourites yet</div>
             }
 
         </>
