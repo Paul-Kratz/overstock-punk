@@ -1,22 +1,19 @@
-import axios from 'axios';
 import { IBeer } from "../models/IBeer";
-import { IPageParams } from '../models/IPageParams';
 export const ROOT = "https://api.punkapi.com/v2/";
 
-const axiosInstance = axios.create({
-    baseURL: ROOT,
-    timeout: 2000,
-    headers: { 'Accept': 'application/json' }
-})
-export const getAllBeers = async (params?: IPageParams): Promise<Array<IBeer>> => {
-    const { data } = await axiosInstance.get<Array<IBeer>>("beers", { params: params })
-        .catch(e => { throw new Error(e.message) });
-    return data;
+export const getAllBeers = async (page?: number): Promise<Array<IBeer>> => {
+    const response = await fetch(`${ROOT}beers?page=${page}`);
+    if (!response.ok)
+        throw new Error((await response.json()).message);
+    return await response.json();
 }
 
 export const getBeerById = async (id: number): Promise<IBeer> => {
-    const { data } = await axiosInstance.get<Array<IBeer>>(`beers/${id}`)
-        .catch(e => { throw new Error(e.message) });
+
+    const response = await fetch(`${ROOT}beers/${id}`).catch(err => { throw new Error(err); });
+    if (!response.ok)
+        throw new Error((await response.json()).message);
+    const data = await response.json();
     /**  
      * The API returns an array for this endpoint. To account for this we only return the first item 
      * and throw an error if its longer than 1

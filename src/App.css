@@ -18,3 +18,30 @@ body {
 .detailBox small {
     font-size: 0.6em !important;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+}
+
+
+.btn-colour {
+    background: #ec5766;
+    color: white;
+}
+
+.btn-colour:hover {
+    border-color: #ec5766;
+    background-color: transparent;
+    color: #ec5766;
+}
+
+.btn-outline-colour {
+    border-color: #ec5766;
+    color: #ec5766;
+}
+
+.btn-outline-colour:hover {
+    background: #ec5766;
+    color: white;
+}
