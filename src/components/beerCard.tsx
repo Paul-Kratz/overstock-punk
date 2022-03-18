@@ -1,8 +1,7 @@
-import 'font-awesome/css/font-awesome.min.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IBeer } from '../models/IBeer';
-import styles from './beerCard.module.css';
+import styles from '../styles/beerCard.module.css';
 import { FavouriteIcon } from './favouriteIcon';
 type BeerCardProps = {
     beer: IBeer

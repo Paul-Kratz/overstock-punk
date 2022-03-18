@@ -1,0 +1,35 @@
+#navbar {
+    height: 75px;
+    background-color: #EC5766;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.bars {
+    color: #ec5766;
+}
+.sidebar {
+    position: fixed;
+    left: -300px;
+    top: 75px;
+    bottom: 0;
+    width: 300px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+    background-color: white;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+#offset {
+    top: 75px;
+}

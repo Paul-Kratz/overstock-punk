@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import FavouritesProvider from './components/FavouritesProvider';
-import Layout from './components/Layout';
+import Layout from './components/layout';
 import { LoadingSpinner } from './components/loadingSpinner';
 const BeerList = React.lazy(() => import('./views/BeerList'));
 const BeerDetails = React.lazy(() => import('./views/BeerDetails'));

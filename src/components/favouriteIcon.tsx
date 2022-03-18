@@ -1,6 +1,6 @@
 import React from 'react';
 import { IBeer } from '../models/IBeer';
-import styles from './beerCard.module.css';
+import styles from '../styles/beerCard.module.css';
 import { useFavourites } from './FavouritesProvider';
 
 type FavouriteIconProps = {

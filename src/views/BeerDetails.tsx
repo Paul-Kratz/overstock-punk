@@ -4,8 +4,8 @@ import { getBeerById } from '../api';
 import { FavouriteButton } from '../components/favouriteButton';
 import { LoadingSpinner } from '../components/loadingSpinner';
 import { IBeer } from '../models/IBeer';
+import styles from '../styles/beerDetails.module.css';
 import { DetailBox } from './../components/detailBox';
-
 const BeerDetails = () => {
     const { id } = useParams();
 
@@ -41,7 +41,7 @@ const BeerDetails = () => {
     }
     return (
         <div className="container mt-4">
-            <Link to="/" className="d-inline-block mb-4 text-decoration-none text-secondary" style={{ margin: '0 auto', fontSize: '1em' }}>
+            <Link to="/" className="d-inline-block mb-4 text-decoration-none text-secondary" id={styles.homeLink}>
                 <i className="fa fa-arrow-left me-2" /> Go Back
             </Link>
             <div className="card shadow-sm border-0">
@@ -58,7 +58,7 @@ const BeerDetails = () => {
                         <p>First brewed: <b>{data.first_brewed}</b></p>
 
                         <h5 className="mt-3">Details: </h5>
-                        <div className="grid">
+                        <div className={styles.grid}>
                             <DetailBox label="ABV" value={`${data.abv}%`} />
                             <DetailBox label="PH" value={data.ph} />
                             <DetailBox label="IBU" value={data.ibu} />

@@ -44,7 +44,7 @@ export default function BeerList() {
                 <div className="row d-flex align-items-stretch">
                     {items.map((i) => (
                         <div key={`beer-${i.id}`}
-                            className="col-xs-12 col-sm-6 col-md-6 col-lg-4 mt-2 d-flex align-items-stretch justify-content-center" >
+                            className="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 mt-2 d-flex align-items-stretch justify-content-center" >
                             <BeerCard beer={i} />
                         </div>
                     ))}

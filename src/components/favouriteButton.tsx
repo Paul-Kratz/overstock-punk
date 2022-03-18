@@ -1,6 +1,7 @@
-import React from 'react'
-import { IBeer } from '../models/IBeer'
-import { useFavourites } from './FavouritesProvider'
+import React from 'react';
+import { IBeer } from '../models/IBeer';
+import styles from '../styles/beerDetails.module.css';
+import { useFavourites } from './FavouritesProvider';
 
 type FavouriteButtonProps = {
     beer: IBeer
@@ -13,14 +14,14 @@ export const FavouriteButton = ({ beer }: FavouriteButtonProps) => {
         return (
             <button
                 onClick={() => removeFavourite(beer.id)}
-                className="btn btn-sm btn-colour">
+                className={`btn btn-sm ${styles.btnColour}`}>
                 Remove favourite
             </button>)
     }
     return (
         <button
             onClick={() => addFavourite(beer)}
-            className="btn btn-sm btn-outline-colour">
+            className={`btn btn-sm ${styles.btnOutlineColour}`}>
             Add favourite
         </button>
     )
