@@ -49,7 +49,7 @@ const BeerDetails = () => {
                     <div className="d-flex justify-content-center align-items-center m-5">
                         <img src={data.image_url} alt={`${data.name} bottle`} height={600} />
                     </div>
-                    <div className="ms-5">
+                    <div className="ms-md-5">
                         <h1>{data.name}</h1>
                         <h5 className="text-secondary mb-3">{data.tagline}</h5>
                         <FavouriteButton beer={data} />
