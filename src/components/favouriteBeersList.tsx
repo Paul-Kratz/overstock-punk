@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom'
 import { IBeer } from '../models/IBeer'
 import { useFavourites } from './FavouritesProvider'
 
+type FavouritesProps = {
+    toggleSidebar: (arg0: boolean) => void
+}
 
-export const FavouriteBeersList = () => {
+export const FavouriteBeersList = ({ toggleSidebar }: FavouritesProps) => {
     const { favourites, removeFavourite } = useFavourites();
 
     const renderFavouriteCard = (beer: IBeer) => (
         <div key={`favourite-${beer.id}`} className="card shadow-sm mb-2 border-0">
             <div className="card-body d-flex justify-content-between align-items-center">
-                <Link to={`beers/${beer.id}`} className="text-decoration-none text-black me-1 d-flex align-items-center">
+                <Link to={`beers/${beer.id}`} onClick={() => toggleSidebar(false)} className="text-decoration-none text-black me-1 d-flex align-items-center">
 
                     <img src={beer.image_url} alt={`${beer.name} bottle`} height={40} className="me-3" />
                     <div>

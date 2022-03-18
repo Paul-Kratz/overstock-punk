@@ -9,7 +9,7 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-    const [sidebarOpen, toggleSidebar] = useState(true);
+    const [sidebarOpen, toggleSidebar] = useState(false);
     const { favourites } = useFavourites();
 
     useEffect(() => {
@@ -33,7 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
             </div>
             <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ''} shadow`}>
                 <div className="sticky-top p-3 h-100" id={styles.offset}>
-                    <FavouriteBeersList />
+                    <FavouriteBeersList toggleSidebar={toggleSidebar} />
                 </div>
             </div>
             <main>
