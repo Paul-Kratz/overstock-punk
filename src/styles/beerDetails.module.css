@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
     font-size:1.3em;
-    color: #ec5766;
+    color: #682957;
 }
 
 
@@ -26,22 +26,22 @@
 
 
 .btnColour {
-    background: #ec5766;
+    background: #682957;
     color: white;
 }
 
 .btnColour:hover {
-    border-color: #ec5766;
+    border-color: #682957;
     background-color: transparent;
-    color: #ec5766;
+    color: #682957;
 }
 
 .btnOutlineColour {
-    border-color: #ec5766;
-    color: #ec5766;
+    border-color: #682957;
+    color: #682957;
 }
 
 .btnOutlineColour:hover {
-    background: #ec5766;
+    background: #682957;
     color: white;
 }

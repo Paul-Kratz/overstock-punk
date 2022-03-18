@@ -9,13 +9,15 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-    const [sidebarOpen, toggleSidebar] = useState(false);
+    const [sidebarOpen, toggleSidebar] = useState<boolean | undefined>();
     const { favourites } = useFavourites();
 
     useEffect(() => {
-        if (!sidebarOpen) {
+        if (sidebarOpen === false) {
             toggleSidebar(true);
             setTimeout(() => { toggleSidebar(false); }, 1500)
+        } else if (sidebarOpen === undefined) {
+            toggleSidebar(false);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [favourites])

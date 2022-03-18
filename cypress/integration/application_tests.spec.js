@@ -60,11 +60,8 @@ describe('Application tests', () => {
         cy.contains("A Real Bitter Experience").click({ force: true });
         cy.contains("Remove favourite").should("exist")
 
-
+        cy.get('.fa-bars').first().click();
         cy.get(".fa-trash-o").first().click();
         cy.contains("Add favourite").should("exist")
-
-
-
     })
 })

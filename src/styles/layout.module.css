@@ -1,6 +1,6 @@
 #navbar {
     height: 75px;
-    background-color: #EC5766;
+    background-color: #682957;
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -13,7 +13,7 @@
 }
 
 .bars {
-    color: #ec5766;
+    color: #682957;
 }
 .sidebar {
     position: fixed;
